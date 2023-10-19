@@ -9,14 +9,15 @@
 void decryption(int q, int r, int* closeKey) 
 {
     int index = 7, counter = 0, counterAnswere = 0;
-    int n1 = 1, quanity = 2, i = 0;
+    int n1 = 1, quanity = 0, i = 0;
     int cipher[100] = { 0 }, result[100];
     int binaryIndexs[8] = { 0 };
     int resultAnswere[100] = { 0 };
     while (r * n1 % q != 1) n1++;
-    printf("Введите количество символов: %d\n", quanity);
-    printf("Введите числа для расшифровки: %d\n", cipher[0]=(103));
-    printf("%d\n", cipher[1] = (111));
+    printf("\nВведите количество символов:\n");
+    scanf("%d", &quanity);
+    printf("Введите числа для расшифровки:\n");
+    for (i = 0; i < quanity; i++) scanf("%d", &cipher[i]);
     for (i = 0; i < quanity; i++) 
     {
         result[i] = cipher[i] * n1 % q;
@@ -37,8 +38,9 @@ void decryption(int q, int r, int* closeKey)
 void encryption(int* openKey) 
 {
     int result = 0;
-    char binaryWord[1000] = { 0 }, word[] = "hi";
-    printf("\nВведите текст: %s\n", word);
+    char binaryWord[1000] = { 0 }, word[1000] = { 0 };
+    printf("\nВведите текст: ");
+    scanf("%s", &word);
     for (int i = 0; word[i] != '\0'; i++) {
         result = 0;
         for (int b = 7, v = 0; b >= 0; --b, v++) binaryWord[v] = (word[i] & (1 << b)) ? '1' : '0';
