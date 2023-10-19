@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  cipher3:
+    image: cipher3
+    build:
+      context: .
+      dockerfile: ./Dockerfile
